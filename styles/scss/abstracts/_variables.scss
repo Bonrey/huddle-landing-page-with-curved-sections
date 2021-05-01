@@ -1,0 +1,29 @@
+$button-bg: hsl(322, 100%, 66%);
+$button-hover: hsl(321, 100%, 78%);
+$input-error: hsl(0, 100%, 63%);
+$social-media-hover: #02c7f6;
+
+$very-dark-cyan: hsl(192, 100%, 9%);
+$section-bg: hsl(207, 100%, 98%);
+
+$base-font-size: 16px;
+$body-font-family: 'Open Sans', sans-serif;
+$headings-font-family: 'Poppins', sans-serif;
+
+$padding-x: (
+  "mobile": 2.4rem,
+  "desktop": 4rem
+);
+
+$bg-size: (
+  "mobile": 20rem,
+  "desktop": 25rem,
+  "widescreen": 28rem
+);
+
+$breakpoints: (
+  "mobile": 375px,
+  "tablet": 768px,
+  "desktop": 1024px,
+  "widescreen": 1440px
+);

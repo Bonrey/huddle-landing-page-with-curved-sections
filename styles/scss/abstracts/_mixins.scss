@@ -1,0 +1,10 @@
+@use './variables';
+@use 'sass:map';
+
+@mixin media($breakpoint) {
+  $bp: map.get(variables.$breakpoints, $breakpoint);
+
+  @media only screen and (min-width: $bp) {
+    @content;
+  }
+}

@@ -1,0 +1,21 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use './typography';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100vw / 375 * 14;
+  @include media(mobile) { font-size: 14px; }
+  @include media(tablet) { font-size: $base-font-size; }
+  
+  scroll-behavior: smooth;
+}
+
+body { font-family: $body-font-family; }
+h1, h2 { font-family: $headings-font-family; }
+
+main { color: $very-dark-cyan; }

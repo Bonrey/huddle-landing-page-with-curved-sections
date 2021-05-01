@@ -1,0 +1,271 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/placeholders' as *;
+@use '../abstracts/mixins' as *;
+@use 'sass:map';
+@use 'sass:color';
+
+main {
+  h2 { 
+    margin-bottom: 1rem;
+    text-align: center;
+    @include media(desktop) { font-size: 2.1rem; }
+  }
+
+  p {
+    max-width: 30rem;
+    margin: 0 auto;
+    text-align: center;
+
+    @include media(desktop) { 
+      max-width: 28rem;
+      text-align: left;
+    }
+
+    @include media(widescreen) { max-width: 32rem; }
+  }
+
+  div.get-started { 
+    padding: 2rem map.get($padding-x, mobile) 10rem;
+
+    h2 { 
+      font-size: 1.8rem;
+      @include media(desktop) { font-size: 2.1rem; }
+    }
+
+    button { margin-top: 1.5rem; }
+  }
+}
+
+section.community {
+  padding: 0 map.get($padding-x, mobile);
+
+  h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    @include media(desktop) { font-size: 2.4rem; }
+    @include media(widescreen) { font-size: 2.5rem; }
+  }
+
+  p { 
+    text-align: center;
+    max-width: 30rem; 
+  }
+
+  button { margin-top: 3rem; }
+
+  .img-wrapper {
+    width: 96%;
+    max-width: 30rem;
+    margin: 6rem auto 8rem;
+    
+    img { width: 100%; }
+
+    @include media(tablet) { 
+      max-width: 36rem;
+      margin: 4rem auto 7rem;
+    }
+    @include media(desktop) { max-width: 42rem; }
+    @include media(widescreen) { max-width: 48rem; }
+  }
+
+  .stats {
+    text-align: center;
+
+    @include media(tablet) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .communities-stats, .messages-stats {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 7rem;
+    margin: 0 4rem;
+
+    @include media(desktop) { margin: 0 6rem; }
+    @include media(widescreen) { margin: 0 8rem; }
+
+    img {
+      position: absolute;
+      width: 1.75rem;
+      top: -1.25rem;
+      left: 0;
+    }
+
+    &__number {
+      display: block;
+      font-size: 3.75rem;
+      font-weight: bold;
+    }
+
+    &__label {
+      color: color.adjust(black, $lightness: 50%);
+    }
+
+    @include media(tablet) {
+      img {
+        width: 2.25rem;
+        top: -1.75rem;
+      }
+    
+      &__number { font-size: 4.5rem; }
+      &__label { font-size: 1.125rem; }
+    }
+  }
+
+  .communities-stats {
+    img {
+      width: 2.25rem;
+      top: -1.75rem;
+    }
+  
+    &__number { font-size: 4.5rem; }
+    &__label { font-size: 1.125rem; }
+  }
+}
+
+section.growth {
+  margin: 3rem 0 10rem;
+  background-color: $section-bg;
+  position: relative;
+
+  @include media(desktop) { margin-top: 8rem; }
+
+  &::before {
+    @extend %bg-curve;
+    height: 9rem;
+    top: -8rem;
+    background: url('../../assets/images/bg-section-top-mobile-1.svg') no-repeat left top;
+    background-size: 100% 100%;
+
+    @include media(desktop) {
+      background: url('../../assets/images/bg-section-top-desktop-1.svg') no-repeat left top;
+      background-size: 100% 100%;
+    }
+  }
+
+  &::after {
+    @extend %bg-curve;
+    height: 4rem;
+    bottom: -3rem;
+    background: url('../../assets/images/bg-section-bottom-mobile-1.svg') no-repeat left bottom;
+    background-size: 100% 100%;
+
+    @include media(desktop) {
+      height: 7rem;
+      bottom: -6rem;
+      background: url('../../assets/images/bg-section-bottom-desktop-1.svg') no-repeat left top;
+      background-size: 100% 100%;
+    }
+  }
+
+  .growth-content {
+    padding: 25rem map.get($padding-x, mobile) 4rem;
+    background: url('../../assets/images/illustration-grow-together.svg') no-repeat center 4rem;
+    background-size: map.get($bg-size, mobile);
+
+    @include media(desktop) {
+      padding: 12rem map.get($padding-x, desktop) 8rem;
+      background-position: right map.get($padding-x, desktop) center;
+      background-size: map.get($bg-size, desktop);
+      max-width: 64rem;
+      margin: 0 auto;
+
+      h2 { text-align: left; }
+      p { display: inline-block; }
+    }
+
+    @include media(widescreen) { 
+      max-width: 70rem;
+      background-size: map.get($bg-size, widescreen);
+    }
+  }
+}
+
+section.conversations {
+  margin-bottom: 10rem;
+  padding: 21rem map.get($padding-x, mobile) 4rem;
+  background: url('../../assets/images/illustration-flowing-conversation.svg') no-repeat center 2rem;
+  background-size: map.get($bg-size, mobile);
+
+  @include media(desktop) {
+    padding: 10rem map.get($padding-x, desktop);
+    background-position: map.get($padding-x, desktop) center;
+    background-size: map.get($bg-size, desktop);
+    max-width: 64rem;
+    margin: 0 auto;
+    text-align: right;
+
+    .conversations-content {
+      display: inline-block;
+
+      h2 {text-align: left;}
+    }
+  }
+
+  @include media(widescreen) { 
+    max-width: 70rem;
+    background-size: map.get($bg-size, widescreen);
+    padding-top: 14rem;
+    padding-bottom: 14rem;
+  }
+}
+
+section.users {
+  margin: 12rem 0 10rem;
+  background-color: $section-bg;
+  position: relative;
+
+  @include media(desktop) { margin-top: 8rem; }
+
+  &::before {
+    @extend %bg-curve;
+    height: 7rem;
+    top: -7rem;
+    background: url('../../assets/images/bg-section-top-mobile-2.svg') no-repeat left top;
+    background-size: 100% 100%;
+
+    @include media(desktop) {
+      background: url('../../assets/images/bg-section-top-desktop-2.svg') no-repeat left top;
+      background-size: 100% 100%;
+    }
+  }
+
+  &::after {
+    @extend %bg-curve;
+    height: 8rem;
+    bottom: -7rem;
+    background: url('../../assets/images/bg-section-bottom-mobile-2.svg') no-repeat left bottom;
+    background-size: 100% 100%;
+
+    @include media(desktop) {
+      background: url('../../assets/images/bg-section-bottom-desktop-1.svg') no-repeat left top;
+      background-size: 100% 100%;
+    }
+  }
+
+  .users-content {
+    padding: 21rem map.get($padding-x, mobile) 7rem;
+    background: url('../../assets/images/illustration-your-users.svg') no-repeat center 1rem;
+    background-size: map.get($bg-size, mobile);
+
+    @include media(desktop) {
+      padding: 9rem map.get($padding-x, desktop);
+      background-position: right map.get($padding-x, desktop) center;
+      background-size: map.get($bg-size, desktop);
+      max-width: 64rem;
+      margin: 0 auto;
+
+      h2 { text-align: left; }
+      p { display: inline-block; }
+    }
+
+    @include media(widescreen) { 
+      max-width: 70rem;
+      background-size: map.get($bg-size, widescreen);
+    }
+  }
+}

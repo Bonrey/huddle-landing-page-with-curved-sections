@@ -1,0 +1,19 @@
+@use './variables';
+
+%button {
+  outline: none;
+  border: none;
+  font-size: 0.875rem;
+  font-family: variables.$body-font-family;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: background-color 400ms, color 400ms;
+}
+
+%bg-curve {
+  content: "";
+  display: block;
+  width: 100%;
+  position: absolute;
+  left: 0;
+}
