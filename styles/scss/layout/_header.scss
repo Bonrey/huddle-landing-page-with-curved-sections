@@ -23,6 +23,11 @@ header {
 
   .logo-wrapper {
     width: 8rem;
+
+    &:focus-visible {
+      outline: 0.1rem dashed $very-dark-cyan;
+    }
+
     img { width: 100%; }
 
     @include media(tablet) {
@@ -39,7 +44,8 @@ header {
     height: 2rem;
     border-radius: 1rem;
 
-    &:hover {
+    &:hover, &:focus-visible {
+      outline: none;
       background-color: $button-bg;
       color: white;
     }

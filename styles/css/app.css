@@ -32,7 +32,6 @@ main {
 }
 
 .button--get-started, .form form button, header button {
-  outline: none;
   border: none;
   font-size: 0.875rem;
   font-family: "Open Sans", sans-serif;
@@ -84,6 +83,9 @@ header > div {
 header .logo-wrapper {
   width: 8rem;
 }
+header .logo-wrapper:focus-visible {
+  outline: 0.1rem dashed #00252e;
+}
 header .logo-wrapper img {
   width: 100%;
 }
@@ -100,7 +102,8 @@ header button {
   height: 2rem;
   border-radius: 1rem;
 }
-header button:hover {
+header button:hover, header button:focus-visible {
+  outline: none;
   background-color: #ff52bf;
   color: white;
 }
@@ -506,7 +509,6 @@ footer::before {
   }
 }
 .form form input {
-  outline: none;
   border: none;
   font-size: 1rem;
   font-family: "Open Sans", sans-serif;
@@ -563,6 +565,9 @@ footer::before {
   width: 14rem;
   margin-bottom: 1rem;
 }
+.contact-information__logo-wrapper:focus-visible {
+  outline: 0.1rem dashed white;
+}
 .contact-information__logo-wrapper img {
   width: 100%;
 }
@@ -585,7 +590,10 @@ footer::before {
   transition: transform 500ms;
   transform: scaleX(0);
 }
-.contact-information .attribution a:hover::after {
+.contact-information .attribution a:hover, .contact-information .attribution a:focus-visible {
+  outline: none;
+}
+.contact-information .attribution a:hover::after, .contact-information .attribution a:focus-visible::after {
   transform: scaleX(1);
 }
 .contact-information .phone, .contact-information .email {
@@ -609,7 +617,10 @@ footer::before {
   line-height: 2rem;
   margin-right: 1rem;
 }
-.contact-information .social-media a:hover .fab {
+.contact-information .social-media a:hover, .contact-information .social-media a:focus-visible {
+  outline: none;
+}
+.contact-information .social-media a:hover .fab, .contact-information .social-media a:focus-visible .fab {
   color: #02c7f6;
 }
 .contact-information .social-media a .fab {
@@ -628,7 +639,8 @@ footer::before {
   display: block;
   margin: 0 auto;
 }
-.button--get-started:hover {
+.button--get-started:hover, .button--get-started:focus-visible {
+  outline: none;
   background-color: #ff8fd8;
 }
 .button--get-started:active {

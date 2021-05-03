@@ -80,7 +80,6 @@ footer {
     }
 
     input {
-      outline: none;
       border: none;
       font-size: 1rem;
       font-family: $body-font-family;
@@ -138,6 +137,10 @@ footer {
     width: 14rem;
     margin-bottom: 1rem;
 
+    &:focus-visible {
+      outline: 0.1rem dashed white;
+    }
+
     img { width: 100%; }
   }
 
@@ -162,7 +165,11 @@ footer {
         transform: scaleX(0);
       }
 
-      &:hover::after { transform: scaleX(1); }
+      &:hover, &:focus-visible {
+        outline: none;
+
+        &::after { transform: scaleX(1); }
+      }
     }
   }
 
@@ -189,7 +196,11 @@ footer {
       line-height: 2rem;
       margin-right: 1rem;
 
-      &:hover .fab { color: $social-media-hover; }
+      &:hover, &:focus-visible {
+        outline: none;
+        
+        .fab { color: $social-media-hover; }
+      }
 
       .fab {
         line-height: 2rem;

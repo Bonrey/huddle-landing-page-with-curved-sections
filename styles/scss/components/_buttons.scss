@@ -15,7 +15,8 @@
   display: block;
   margin: 0 auto;
 
-  &:hover {
+  &:hover, &:focus-visible {
+    outline: none;
     background-color: $button-hover;
   }
 
