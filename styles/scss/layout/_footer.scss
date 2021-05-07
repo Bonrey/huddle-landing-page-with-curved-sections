@@ -74,13 +74,15 @@ footer {
   }
 
   form {
+    position: relative;
+
     @include media(desktop) {
       display: flex;
       align-items: center;
     }
 
     input {
-      border: none;
+      border: 0.125rem solid $very-dark-cyan;
       font-size: 1rem;
       font-family: $body-font-family;
       width: 100%;
@@ -90,6 +92,24 @@ footer {
       box-sizing: border-box;
       display: inline-block;
       margin-bottom: 1.1rem;
+
+      & + span {
+        opacity: 0;
+        color: $input-error;
+        font-size: 0.75rem;
+        position: absolute;
+        top: 3.6rem;
+        left: 0.1rem;
+      }
+
+      &:invalid {
+        outline: none;
+        border: 0.1rem solid $input-error;
+
+        & + span {
+          opacity: 1;
+        }
+      }
 
       &::placeholder {
         font-weight: 600;
